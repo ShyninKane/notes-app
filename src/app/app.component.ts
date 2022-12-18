@@ -33,6 +33,7 @@ export class AppComponent {
     if (this.selectedNote.id === id) {
       this.selectedNote = null;
     }
-    this.notes.splice(id, 1);
+    const idx = this.notes.findIndex((x) => x.id === id);
+    this.notes.splice(idx, 1);
   }
 }
