@@ -63,13 +63,12 @@
       </mat-list-item>
     </mat-list>
   </mat-grid-tile>
+
   <mat-grid-tile>
     <b><mat-grid-tile-header>Note Description</mat-grid-tile-header></b>
-    <div style="word-wrap: break-word; width: 90%; text-align: left">
-      <h4 style="margin-bottom: 8px">
-        {{ selectedNote?.title }}
-      </h4>
-      <p style="margin-top: 8px">
+    <div class="note-description">
+      <h4>{{ selectedNote?.title }}</h4>
+      <p>
         {{ selectedNote ? selectedNote?.description : "No note selected." }}
       </p>
     </div>
