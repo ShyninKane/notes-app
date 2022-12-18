@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { initialNotes } from "src/app/data";
 import { Note } from "./note";
+import * as _ from "lodash";
 
 @Component({
   selector: "app-root",
@@ -8,7 +9,7 @@ import { Note } from "./note";
   styleUrls: ["./app.component.css"],
 })
 export class AppComponent {
-  notes: Note[] = initialNotes; // TODO: deep copy needed
+  notes: Note[] = _.cloneDeep(initialNotes);
 
   id: number = 4;
   title: string = "";
