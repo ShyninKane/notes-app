@@ -1,4 +1,4 @@
-import { Note } from "src/app/note";
+import { Note } from "src/app/models";
 
 export const initialNotes: Note[] = [
   new Note("What I am going to do.", "My agenda for the week."),
