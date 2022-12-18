@@ -13,29 +13,29 @@
     <form
       #myForm="ngForm"
       class="note-form"
-      (submit)="addNote(title.value, description.value)"
+      (submit)="addNote(titleInput.value, descriptionInput.value)"
     >
       <mat-form-field id="title" class="full-width" appearance="outline">
         <input
-          [(ngModel)]="title"
-          name="title"
+          [(ngModel)]="titleInput"
+          name="titleInput"
           type="text"
           matInput
           placeholder="Note title"
           maxlength="50"
         />
-        <mat-hint align="end">{{ title.length }} / 50</mat-hint>
+        <mat-hint align="end">{{ titleInput.length }} / 50</mat-hint>
       </mat-form-field>
 
       <mat-form-field class="full-width" appearance="outline">
         <textarea
-          [(ngModel)]="description"
-          name="description"
+          [(ngModel)]="descriptionInput"
+          name="descriptionInput"
           matInput
           placeholder="Note description"
           maxlength="256"
         ></textarea>
-        <mat-hint align="end">{{ description.length }} / 256</mat-hint>
+        <mat-hint align="end">{{ descriptionInput.length }} / 256</mat-hint>
       </mat-form-field>
 
       <button mat-raised-button type="submit" class="submit-button">

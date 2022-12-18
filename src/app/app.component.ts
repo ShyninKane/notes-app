@@ -12,14 +12,14 @@ export class AppComponent {
   notes: Note[] = _.cloneDeep(initialNotes);
 
   id: number = 4;
-  title: string = "";
-  description: string = "";
+  titleInput: string = "";
+  descriptionInput: string = "";
 
   addNote(title: string, description: string) {
-    this.notes.push(new Note(this.id, this.title, this.description));
+    this.notes.push(new Note(this.id, this.titleInput, this.descriptionInput));
     this.id++;
-    this.title = "";
-    this.description = "";
+    this.titleInput = "";
+    this.descriptionInput = "";
   }
 
   selectedNote: Note;
