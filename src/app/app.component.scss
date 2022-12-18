@@ -81,7 +81,11 @@ mat-list-item {
 }
 
 .delete-button {
+  $fill-color: #f44336;
   flex: 0 0 70px; // просим всегда сохранять ширину 70px; flexbox related
-  background: #f44336; // цвет заливки
+  background: $fill-color; // цвет заливки
   color: #fff; // цвет текста
+  &:hover {
+    background: darken($color: $fill-color, $amount: 15);
+  }
 }
