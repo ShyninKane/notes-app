@@ -23,29 +23,6 @@ mat-grid-tile {
   border-radius: 5px;
 }
 
-mat-list {
-  flex-direction: column;
-  width: 100%;
-}
-
-mat-list-item {
-  width: 100%;
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
-
-.submit-button {
-  background: #7cb342;
-  color: #ffffff;
-  float: right;
-}
-
-.note-form {
-  min-width: 150px;
-  max-width: 500px;
-  width: 90%;
-}
-
 .full-width {
   width: 100%;
 }
@@ -72,9 +49,9 @@ mat-list-item {
     justify-content: space-between; // выравнивание дочерних элементов таким образом, чтобы слева и справа не было пространства
     gap: 4px; // отступ между дочерними элементами
     cursor: pointer; // указатель мыши меняется на "можно кликать"
+    border-radius: 4px; // закругление углов границы
     $border-partial-config: 2px solid; // переменная для границы
     border: $border-partial-config gray; // граница вокруг элемента
-    border-radius: 4px; // закругление углов границы
     &:hover {
       border: $border-partial-config black; // изменение границы при наведении (hover) мыши
     }
@@ -89,7 +66,44 @@ mat-list-item {
   &:hover {
     background: darken(
       $color: $fill-color,
-      $amount: 15
+      $amount: 10
+    ); // затемняем кнопку при наведении (hover) мыши
+  }
+}
+
+.fields {
+  display: flex; // см. CSS flexbox
+  flex-direction: column; // направление: вертикальное
+  gap: 16px; // отступ между дочерними элементами
+  > * {
+    display: flex; // см. CSS flexbox
+    flex-direction: column; // направление: вертикальное
+    gap: 2px; // отступ между дочерними элементами
+  }
+}
+
+.max-char {
+  text-align: right; // выравнивание текста по правой стороне
+}
+
+.note-form {
+  padding: 10px;
+  width: 100%; // просим занять всю ширину родительского элемента и не выходить за его границы
+  box-sizing: border-box; // включать границы внутрь установленных габаритов (height x width). Также см. сравнение border-box vs content-box
+  display: flex; // см. CSS flexbox
+  flex-direction: column; // направление: вертикальное
+  gap: 20px; // отступ между дочерними элементами
+}
+
+.submit-button {
+  float: right; // выравнивание по правой стороне
+  $fill-color: #7cb342; // переменная для заливки
+  background: $fill-color; // цвет заливки
+  color: #fff; // цвет текста
+  &:hover {
+    background: darken(
+      $color: $fill-color,
+      $amount: 10
     ); // затемняем кнопку при наведении (hover) мыши
   }
 }

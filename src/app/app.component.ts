@@ -10,10 +10,12 @@ import * as _ from "lodash";
 })
 export class AppComponent {
   notes: Note[] = _.cloneDeep(initialNotes);
+  selectedNote: Note;
 
   titleInput: string = "";
+  titleMaxLength: number = 50;
   descriptionInput: string = "";
-  selectedNote: Note;
+  descriptionMaxLength: number = 256;
 
   addNote(title: string, description: string): void {
     const newNote = new Note(title, description);

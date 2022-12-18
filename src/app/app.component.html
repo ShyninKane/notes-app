@@ -10,33 +10,42 @@
 <mat-grid-list cols="3" rowHeight="2:3" gutterSize="10px">
   <mat-grid-tile>
     <b><mat-grid-tile-header>New Note</mat-grid-tile-header></b>
-    <form class="note-form" (submit)="addNote(titleInput, descriptionInput)">
-      <mat-form-field id="title" class="full-width" appearance="outline">
-        <input
-          [(ngModel)]="titleInput"
-          name="titleInput"
-          type="text"
-          matInput
-          placeholder="Note title"
-          maxlength="50"
-        />
-        <mat-hint align="end">{{ titleInput.length }} / 50</mat-hint>
-      </mat-form-field>
+    <form class="note-form">
+      <div class="fields">
+        <div>
+          <input
+            [(ngModel)]="titleInput"
+            name="titleInput"
+            placeholder="Note title"
+            [maxlength]="titleMaxLength"
+          />
+          <div class="max-char">
+            {{ titleInput.length }} / {{ titleMaxLength }}
+          </div>
+        </div>
 
-      <mat-form-field class="full-width" appearance="outline">
-        <textarea
-          [(ngModel)]="descriptionInput"
-          name="descriptionInput"
-          matInput
-          placeholder="Note description"
-          maxlength="256"
-        ></textarea>
-        <mat-hint align="end">{{ descriptionInput.length }} / 256</mat-hint>
-      </mat-form-field>
+        <div>
+          <textarea
+            [(ngModel)]="descriptionInput"
+            name="descriptionInput"
+            placeholder="Note description"
+            [maxlength]="descriptionMaxLength"
+          ></textarea>
+          <div class="max-char">
+            {{ descriptionInput.length }} / {{ descriptionMaxLength }}
+          </div>
+        </div>
+      </div>
 
-      <button mat-raised-button type="submit" class="submit-button">
-        Submit
-      </button>
+      <div>
+        <button
+          mat-raised-button
+          class="submit-button"
+          (click)="addNote(titleInput, descriptionInput)"
+        >
+          Submit
+        </button>
+      </div>
     </form>
   </mat-grid-tile>
 
