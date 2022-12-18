@@ -1,43 +1,77 @@
-<h1><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKhlEmkCOUDcDJKXIjtMGOwRVUMVgUEhBsD0sMON_7fUmrk0wG&s" alt="Note" width="24px" height="24px">NotesApp</h1>
+<h1>
+  <img
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKhlEmkCOUDcDJKXIjtMGOwRVUMVgUEhBsD0sMON_7fUmrk0wG&s"
+    alt="Note"
+    width="24px"
+    height="24px"
+  />NotesApp
+</h1>
 
 <mat-grid-list cols="3" rowHeight="2:3" gutterSize="10px">
   <mat-grid-tile>
     <b><mat-grid-tile-header>New Note</mat-grid-tile-header></b>
-      <form #myForm="ngForm" class="note-form" (submit)="addNote(title.value, description.value)">
+    <form
+      #myForm="ngForm"
+      class="note-form"
+      (submit)="addNote(title.value, description.value)"
+    >
+      <mat-form-field id="title" class="full-width" appearance="outline">
+        <input
+          [(ngModel)]="title"
+          name="title"
+          type="text"
+          matInput
+          placeholder="Note title"
+          maxlength="50"
+        />
+        <mat-hint align="end">{{ title.length }} / 50</mat-hint>
+      </mat-form-field>
 
-        <mat-form-field id="title" class="full-width" appearance="outline">
-          <input [(ngModel)]="title" name="title" type="text" matInput placeholder="Note title" maxlength="50">
-          <mat-hint align="end">{{title.length}} / 50</mat-hint>
-        </mat-form-field>
+      <mat-form-field class="full-width" appearance="outline">
+        <textarea
+          [(ngModel)]="description"
+          name="description"
+          matInput
+          placeholder="Note description"
+          maxlength="256"
+        ></textarea>
+        <mat-hint align="end">{{ description.length }} / 256</mat-hint>
+      </mat-form-field>
 
-        <mat-form-field class="full-width" appearance="outline">
-          <textarea [(ngModel)]="description" name="description" matInput placeholder="Note description" maxlength="256"></textarea>
-          <mat-hint align="end">{{description.length}} / 256</mat-hint>
-        </mat-form-field>
-
-        <button mat-raised-button type="submit" class="submit-button">Submit</button>
-      </form>
+      <button mat-raised-button type="submit" class="submit-button">
+        Submit
+      </button>
+    </form>
   </mat-grid-tile>
 
   <mat-grid-tile>
     <b><mat-grid-tile-header>Note List</mat-grid-tile-header></b>
     <mat-list role="list">
       <mat-list-item role="listitem" *ngFor="let note of notes">
-        <button mat-raised-button class="card-button" (click)="getValues(note.id)">
-          <p style="min-height:20px;vertical-align:middle;text-align:left">
+        <button
+          mat-raised-button
+          class="card-button"
+          (click)="getValues(note.id)"
+        >
+          <p style="min-height: 20px; vertical-align: middle; text-align: left">
             {{ note.title }}
-            <button mat-raised-button class="delete-button" (click)="deleteNote(note.id)">Delete</button>
+            <button
+              mat-raised-button
+              class="delete-button"
+              (click)="deleteNote(note.id)"
+            >
+              Delete
+            </button>
           </p>
         </button>
       </mat-list-item>
     </mat-list>
-
   </mat-grid-tile>
   <mat-grid-tile>
     <b><mat-grid-tile-header>Note Description</mat-grid-tile-header></b>
-      <div style="word-wrap:break-word;width:90%;text-align:left">
-        <h4 id="selectedTitle" style="margin-bottom:8px"></h4>
-        <p id="selectedDescription" style="margin-top:8px">No note selected.</p>
-      </div>
+    <div style="word-wrap: break-word; width: 90%; text-align: left">
+      <h4 id="selectedTitle" style="margin-bottom: 8px"></h4>
+      <p id="selectedDescription" style="margin-top: 8px">No note selected.</p>
+    </div>
   </mat-grid-tile>
 </mat-grid-list>

@@ -11,8 +11,8 @@ mat-grid-list {
 }
 
 mat-grid-tile {
-  background: #FAFAFA;
-  border: solid 1px #E0E0E0;
+  background: #fafafa;
+  border: solid 1px #e0e0e0;
   border-radius: 5px;
 }
 
@@ -28,15 +28,15 @@ mat-list-item {
 }
 
 .delete-button {
-  background: #F44336;
-  color: #FFFFFF;
+  background: #f44336;
+  color: #ffffff;
   float: right;
-  margin-bottom:15px;
+  margin-bottom: 15px;
 }
 
 .submit-button {
-  background: #7CB342;
-  color: #FFFFFF;
+  background: #7cb342;
+  color: #ffffff;
   float: right;
 }
 
