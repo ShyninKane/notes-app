@@ -29,23 +29,11 @@ export class AppComponent {
     this.selectedNote = note;
   }
 
-  deleteId: number;
-  idx: number;
-
-  deleteNote(id: number) {
-    this.idx = 0;
-    this.deleteId = id;
-    for (var note of this.notes) {
-      if (note.id == this.deleteId) {
-        this.notes.splice(this.idx, 1);
-        if (this.selectedId == note.id) {
-          document.getElementById("selectedTitle").innerHTML = "";
-          document.getElementById("selectedDescription").innerHTML =
-            "No note selected.";
-        }
-        break;
-      }
-      this.idx++;
+  delete(note: Note) {
+    const id = note.id;
+    if (this.selectedNote.id === id) {
+      this.selectedNote = null;
     }
+    this.notes.splice(id, 1);
   }
 }
