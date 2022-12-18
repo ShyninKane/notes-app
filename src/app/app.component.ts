@@ -22,7 +22,6 @@ export class AppComponent {
     this.description = "";
   }
 
-  selectedId: number;
   selectedNote: Note;
 
   select(note: Note) {
