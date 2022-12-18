@@ -48,11 +48,7 @@
     <b><mat-grid-tile-header>Note List</mat-grid-tile-header></b>
     <mat-list role="list">
       <mat-list-item role="listitem" *ngFor="let note of notes">
-        <button
-          mat-raised-button
-          class="card-button"
-          (click)="getValues(note.id)"
-        >
+        <button mat-raised-button class="card-button" (click)="select(note)">
           <p style="min-height: 20px; vertical-align: middle; text-align: left">
             {{ note.title }}
             <button
@@ -70,8 +66,12 @@
   <mat-grid-tile>
     <b><mat-grid-tile-header>Note Description</mat-grid-tile-header></b>
     <div style="word-wrap: break-word; width: 90%; text-align: left">
-      <h4 id="selectedTitle" style="margin-bottom: 8px"></h4>
-      <p id="selectedDescription" style="margin-top: 8px">No note selected.</p>
+      <h4 id="selectedTitle" style="margin-bottom: 8px">
+        {{ selectedNote?.title }}
+      </h4>
+      <p id="selectedDescription" style="margin-top: 8px">
+        {{ selectedNote ? selectedNote?.description : "No note selected." }}
+      </p>
     </div>
   </mat-grid-tile>
 </mat-grid-list>
