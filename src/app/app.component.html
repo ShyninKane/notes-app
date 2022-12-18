@@ -42,26 +42,22 @@
 
   <mat-grid-tile>
     <b><mat-grid-tile-header>Note List</mat-grid-tile-header></b>
-    <mat-list>
-      <mat-list-item *ngFor="let note of notes">
+    <div class="notes-list">
+      <div
+        class="notes-list__note"
+        (click)="selectNote(note)"
+        *ngFor="let note of notes"
+      >
+        <p>{{ note.title }}</p>
         <button
           mat-raised-button
-          class="card-button"
-          (click)="selectNote(note)"
+          class="delete-button"
+          (click)="deleteNote(note)"
         >
-          <p style="min-height: 20px; vertical-align: middle; text-align: left">
-            {{ note.title }}
-            <button
-              mat-raised-button
-              class="delete-button"
-              (click)="deleteNote(note)"
-            >
-              Delete
-            </button>
-          </p>
+          Delete
         </button>
-      </mat-list-item>
-    </mat-list>
+      </div>
+    </div>
   </mat-grid-tile>
 
   <mat-grid-tile>

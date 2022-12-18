@@ -1,0 +1,87 @@
+h1,
+h4,
+p {
+  padding: 0px;
+  margin: 0px;
+}
+
+h1 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 12px;
+  color: #616161;
+}
+
+mat-grid-list {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+mat-grid-tile {
+  background: #fafafa;
+  border: solid 1px #e0e0e0;
+  border-radius: 5px;
+}
+
+mat-list {
+  flex-direction: column;
+  width: 100%;
+}
+
+mat-list-item {
+  width: 100%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.submit-button {
+  background: #7cb342;
+  color: #ffffff;
+  float: right;
+}
+
+.note-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 90%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.note-description {
+  padding: 10px; // внутренний отступ по всем сторонам
+  display: flex; // см. CSS flexbox
+  flex-direction: column; // направление: вертикальное
+  gap: 8px; // отступ между дочерними элементами
+}
+
+.notes-list {
+  width: 100%; // просим занять всю ширину родительского элемента и не выходить за его границы
+  box-sizing: border-box; // включать границы внутрь установленных габаритов (height x width). Также см. сравнение border-box vs content-box
+  padding: 10px; // внутренний отступ по всем сторонам
+  display: flex; // см. CSS flexbox
+  flex-direction: column; // направление: вертикальное
+  gap: 8px; // отступ между дочерними элементами
+
+  &__note {
+    padding: 10px; // внутренний отступ по всем сторонам
+    display: flex; // см. CSS flexbox
+    align-items: center; // выравнивание дочерних элементов по центру с равными отступами сверху и снизу
+    justify-content: space-between; // выравнивание дочерних элементов таким образом, чтобы слева и справа не было пространства
+    gap: 4px; // отступ между дочерними элементами
+    cursor: pointer; // указатель мыши меняется на "можно кликать"
+    border: 1px solid gray; // граница вокруг элемента
+    border-radius: 4px; // закругление углов границы
+    &:hover {
+      border: 1px solid black; // изменение границы при наведении (hover) мыши
+    }
+  }
+}
+
+.delete-button {
+  flex: 0 0 70px; // просим всегда сохранять ширину 70px; flexbox related
+  background: #f44336; // цвет заливки
+  color: #fff; // цвет текста
+}
