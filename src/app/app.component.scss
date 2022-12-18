@@ -72,20 +72,24 @@ mat-list-item {
     justify-content: space-between; // выравнивание дочерних элементов таким образом, чтобы слева и справа не было пространства
     gap: 4px; // отступ между дочерними элементами
     cursor: pointer; // указатель мыши меняется на "можно кликать"
-    border: 1px solid gray; // граница вокруг элемента
+    $border-partial-config: 2px solid; // переменная для границы
+    border: $border-partial-config gray; // граница вокруг элемента
     border-radius: 4px; // закругление углов границы
     &:hover {
-      border: 1px solid black; // изменение границы при наведении (hover) мыши
+      border: $border-partial-config black; // изменение границы при наведении (hover) мыши
     }
   }
 }
 
 .delete-button {
-  $fill-color: #f44336;
+  $fill-color: #f44336; // переменная для заливки
   flex: 0 0 70px; // просим всегда сохранять ширину 70px; flexbox related
   background: $fill-color; // цвет заливки
   color: #fff; // цвет текста
   &:hover {
-    background: darken($color: $fill-color, $amount: 15);
+    background: darken(
+      $color: $fill-color,
+      $amount: 15
+    ); // затемняем кнопку при наведении (hover) мыши
   }
 }
