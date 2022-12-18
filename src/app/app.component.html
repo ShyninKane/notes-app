@@ -10,10 +10,7 @@
 <mat-grid-list cols="3" rowHeight="2:3" gutterSize="10px">
   <mat-grid-tile>
     <b><mat-grid-tile-header>New Note</mat-grid-tile-header></b>
-    <form
-      class="note-form"
-      (submit)="addNote(titleInput.value, descriptionInput.value)"
-    >
+    <form class="note-form" (submit)="addNote(titleInput, descriptionInput)">
       <mat-form-field id="title" class="full-width" appearance="outline">
         <input
           [(ngModel)]="titleInput"
