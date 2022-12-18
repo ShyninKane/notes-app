@@ -23,9 +23,6 @@ export class AppComponent {
   }
 
   selectedId: number;
-  selectedTitle: string;
-  selectedDescription: string;
-
   selectedNote: Note;
 
   select(note: Note) {
