@@ -29,11 +29,10 @@ export class AppComponent {
   }
 
   delete(note: Note) {
-    const id = note.id;
-    if (this.selectedNote.id === id) {
+    const idx = this.notes.findIndex((x) => x.id === note.id);
+    this.notes.splice(idx, 1);
+    if (!!this.selectedNote && this.selectedNote.id === note.id) {
       this.selectedNote = null;
     }
-    const idx = this.notes.findIndex((x) => x.id === id);
-    this.notes.splice(idx, 1);
   }
 }
