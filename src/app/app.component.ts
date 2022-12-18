@@ -16,19 +16,23 @@ export class AppComponent {
   descriptionInput: string = "";
 
   addNote(title: string, description: string) {
-    this.notes.push(new Note(this.id, this.titleInput, this.descriptionInput));
+    this.notes.push(new Note(this.id, title, description));
     this.id++;
+    this.resetInput();
+  }
+
+  private resetInput(): void {
     this.titleInput = "";
     this.descriptionInput = "";
   }
 
   selectedNote: Note;
 
-  select(note: Note) {
+  selectNote(note: Note) {
     this.selectedNote = note;
   }
 
-  delete(note: Note) {
+  deleteNote(note: Note) {
     const idx = this.notes.findIndex((x) => x.id === note.id);
     this.notes.splice(idx, 1);
     if (!!this.selectedNote && this.selectedNote.id === note.id) {

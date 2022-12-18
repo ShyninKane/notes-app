@@ -47,13 +47,17 @@
     <b><mat-grid-tile-header>Note List</mat-grid-tile-header></b>
     <mat-list role="list">
       <mat-list-item role="listitem" *ngFor="let note of notes">
-        <button mat-raised-button class="card-button" (click)="select(note)">
+        <button
+          mat-raised-button
+          class="card-button"
+          (click)="selectNote(note)"
+        >
           <p style="min-height: 20px; vertical-align: middle; text-align: left">
             {{ note.title }}
             <button
               mat-raised-button
               class="delete-button"
-              (click)="delete(note)"
+              (click)="deleteNote(note)"
             >
               Delete
             </button>
