@@ -11,7 +11,6 @@
   <mat-grid-tile>
     <b><mat-grid-tile-header>New Note</mat-grid-tile-header></b>
     <form
-      #myForm="ngForm"
       class="note-form"
       (submit)="addNote(titleInput.value, descriptionInput.value)"
     >
