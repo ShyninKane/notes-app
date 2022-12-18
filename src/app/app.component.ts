@@ -11,13 +11,11 @@ import * as _ from "lodash";
 export class AppComponent {
   notes: Note[] = _.cloneDeep(initialNotes);
 
-  id: number = 4;
   titleInput: string = "";
   descriptionInput: string = "";
 
   addNote(title: string, description: string) {
-    this.notes.push(new Note(this.id, title, description));
-    this.id++;
+    this.notes.push(new Note(title, description));
     this.resetInput();
   }
 
