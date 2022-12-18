@@ -15,7 +15,7 @@ export class AppComponent {
   descriptionInput: string = "";
   selectedNote: Note;
 
-  addNote(title: string, description: string) {
+  addNote(title: string, description: string): void {
     const newNote = new Note(title, description);
     this.notes.push(newNote);
     this.resetInput();
