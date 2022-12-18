@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { initialNotes } from "src/app/data";
 import { Note } from "./note";
 
 @Component({
@@ -7,20 +8,7 @@ import { Note } from "./note";
   styleUrls: ["./app.component.css"],
 })
 export class AppComponent {
-  notes: Note[] = [
-    new Note(0, "What I am going to do.", "My agenda for the week."),
-    new Note(1, "Don't forget to call them.", "Call Mikey"),
-    new Note(
-      2,
-      "I have to get some sleep.",
-      "So tired... Longing for the weekend to have a healthy sleep!"
-    ),
-    new Note(
-      3,
-      "Now this is an extremely long note showing deficiencies of the design",
-      "Duh"
-    ),
-  ];
+  notes: Note[] = initialNotes; // TODO: deep copy needed
 
   id: number = 4;
   title: string = "";
