@@ -28,13 +28,11 @@ export class AppComponent {
 
   getValues(id: number) {
     this.selectedId = id;
-    for (var note of this.notes) {
-      if (note.id == this.selectedId) {
-        this.selectedTitle = note.title;
-        this.selectedDescription = note.description;
-        break;
-      }
-    }
+
+    const note = this.notes.find((note) => note.id === this.selectedId);
+    this.selectedTitle = note.title;
+    this.selectedDescription = note.description;
+
     document.getElementById("selectedTitle").innerHTML = this.selectedTitle;
     document.getElementById("selectedDescription").innerHTML =
       this.selectedDescription;
