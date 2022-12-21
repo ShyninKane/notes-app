@@ -1,4 +1,4 @@
-<h1>
+<h1 class="app-title">
   <img
     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKhlEmkCOUDcDJKXIjtMGOwRVUMVgUEhBsD0sMON_7fUmrk0wG&s"
     alt="Note"
@@ -7,9 +7,9 @@
   />NotesApp
 </h1>
 
-<mat-grid-list cols="3" rowHeight="2:3" gutterSize="10px">
-  <mat-grid-tile>
-    <b><mat-grid-tile-header>New Note</mat-grid-tile-header></b>
+<div class="tiles">
+  <div>
+    <h2 class="tile-title">New Note</h2>
     <form class="note-form">
       <div class="fields">
         <div>
@@ -47,10 +47,10 @@
         </button>
       </div>
     </form>
-  </mat-grid-tile>
+  </div>
 
-  <mat-grid-tile>
-    <b><mat-grid-tile-header>Note List</mat-grid-tile-header></b>
+  <div>
+    <h2 class="tile-title">Note List</h2>
     <div class="notes-list">
       <div
         class="notes-list__note"
@@ -67,15 +67,15 @@
         </button>
       </div>
     </div>
-  </mat-grid-tile>
+  </div>
 
-  <mat-grid-tile>
-    <b><mat-grid-tile-header>Note Description</mat-grid-tile-header></b>
+  <div>
+    <h2 class="tile-title">Note Description</h2>
     <div class="note-description">
       <h4>{{ selectedNote?.title }}</h4>
       <p>
         {{ selectedNote ? selectedNote?.description : "No note selected." }}
       </p>
     </div>
-  </mat-grid-tile>
-</mat-grid-list>
+  </div>
+</div>
