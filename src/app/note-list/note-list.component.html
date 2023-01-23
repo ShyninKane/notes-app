@@ -1,0 +1,6 @@
+<div class="note" (click)="selectNote(note)" *ngFor="let note of notes">
+  <span>{{ note.title }}</span>
+  <button mat-raised-button class="delete-btn" (click)="deleteNote(note)">
+    Delete
+  </button>
+</div>

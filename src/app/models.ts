@@ -12,3 +12,8 @@ export class Note {
     Note.nextId++;
   }
 }
+
+export interface NewNoteDTO {
+  title: string;
+  description: string;
+}

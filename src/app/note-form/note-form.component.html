@@ -1,0 +1,39 @@
+<form class="note-form">
+  <div class="fields">
+    <div>
+      <input
+        [(ngModel)]="titleInput"
+        name="titleInput"
+        placeholder="Note title"
+        [maxlength]="titleMaxLength"
+      />
+      <app-max-char-info
+        [text]="titleInput"
+        [maxLength]="titleMaxLength"
+      ></app-max-char-info>
+    </div>
+
+    <div>
+      <textarea
+        [(ngModel)]="descriptionInput"
+        name="descriptionInput"
+        placeholder="Note description"
+        [maxlength]="descriptionMaxLength"
+      ></textarea>
+      <app-max-char-info
+        [text]="descriptionInput"
+        [maxLength]="descriptionMaxLength"
+      ></app-max-char-info>
+    </div>
+  </div>
+
+  <div>
+    <button
+      mat-raised-button
+      class="add-btn"
+      (click)="addNote(titleInput, descriptionInput)"
+    >
+      Submit
+    </button>
+  </div>
+</form>

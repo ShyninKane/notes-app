@@ -1,17 +1,10 @@
+@import "src/assets/styles/variables";
+
 :host {
   height: 100%;
 }
 
-$app-title-height: 60px;
-
-.app-title {
-  padding: 10px;
-  color: #616161;
-  box-sizing: border-box;
-  height: $app-title-height;
-}
-
-.tiles {
+.sections {
   box-sizing: border-box;
   height: calc(100% - #{$app-title-height});
   padding: 10px;
@@ -23,85 +16,5 @@ $app-title-height: 60px;
     background: #fafafa;
     border: solid 1px #e0e0e0;
     border-radius: 5px;
-  }
-}
-
-.tile-title {
-  padding: 10px;
-  font-size: 20px;
-}
-
-.note-description {
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.notes-list {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-
-  &__note {
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 4px;
-    cursor: pointer;
-    border-radius: 4px;
-    $border-partial-config: 2px solid;
-    border: $border-partial-config gray;
-    &:hover {
-      border: $border-partial-config black;
-    }
-  }
-}
-
-.delete-button {
-  $fill-color: #f44336;
-  flex: 0 0 70px;
-  background: $fill-color;
-  color: #fff;
-  &:hover {
-    background: darken($color: $fill-color, $amount: 10);
-  }
-}
-
-.fields {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  > * {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
-}
-
-.max-char {
-  text-align: right;
-}
-
-.note-form {
-  padding: 10px;
-  width: 100%;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.submit-button {
-  float: right;
-  $fill-color: #7cb342;
-  background: $fill-color;
-  color: #fff;
-  &:hover {
-    background: darken($color: $fill-color, $amount: 10);
   }
 }

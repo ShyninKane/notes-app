@@ -1,86 +1,15 @@
-<h1 class="app-title">
-  <img
-    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKhlEmkCOUDcDJKXIjtMGOwRVUMVgUEhBsD0sMON_7fUmrk0wG&s"
-    alt="Note"
-    width="24px"
-    height="24px"
-  />
-  NotesApp
-</h1>
+<app-header></app-header>
 
-<div class="tiles">
-  <div>
-    <h2 class="tile-title">New Note</h2>
+<div class="sections">
+  <app-section title="New Note">
+    <app-note-form></app-note-form>
+  </app-section>
 
-    <form class="note-form">
-      <div class="fields">
-        <div>
-          <input
-            [(ngModel)]="titleInput"
-            name="titleInput"
-            placeholder="Note title"
-            [maxlength]="titleMaxLength"
-          />
+  <app-section title="Note List">
+    <app-note-list [notes]="notes"></app-note-list>
+  </app-section>
 
-          <div class="max-char">
-            {{ titleInput.length }} / {{ titleMaxLength }}
-          </div>
-        </div>
-
-        <div>
-          <textarea
-            [(ngModel)]="descriptionInput"
-            name="descriptionInput"
-            placeholder="Note description"
-            [maxlength]="descriptionMaxLength"
-          ></textarea>
-          <div class="max-char">
-            {{ descriptionInput.length }} / {{ descriptionMaxLength }}
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <button
-          mat-raised-button
-          class="submit-button"
-          (click)="addNote(titleInput, descriptionInput)"
-        >
-          Submit
-        </button>
-      </div>
-    </form>
-  </div>
-
-  <div>
-    <h2 class="tile-title">Note List</h2>
-    <div class="notes-list">
-      <div
-        class="notes-list__note"
-        (click)="selectNote(note)"
-        *ngFor="let note of notes"
-      >
-        <p>{{ note.title }}</p>
-
-        <button
-          mat-raised-button
-          class="delete-button"
-          (click)="deleteNote(note)"
-        >
-          Delete
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <div>
-    <h2 class="tile-title">Note Description</h2>
-    <div class="note-description">
-      <h4>{{ selectedNote?.title }}</h4>
-
-      <p>
-        {{ selectedNote ? selectedNote?.description : "No note selected." }}
-      </p>
-    </div>
-  </div>
+  <app-section title="Note Description">
+    <app-note-details></app-note-details>
+  </app-section>
 </div>

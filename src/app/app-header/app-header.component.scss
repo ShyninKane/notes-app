@@ -1,0 +1,11 @@
+@import "src/assets/styles/variables";
+
+:host {
+  box-sizing: border-box;
+  height: $app-title-height;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #616161;
+}

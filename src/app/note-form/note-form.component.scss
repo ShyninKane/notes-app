@@ -1,0 +1,29 @@
+.note-form {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  > * {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+}
+
+.add-btn {
+  float: right;
+  $fill-color: #7cb342;
+  background: $fill-color;
+  color: #fff;
+  &:hover {
+    background: darken($color: $fill-color, $amount: 10);
+  }
+}
