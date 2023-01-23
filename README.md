@@ -1,27 +1,25 @@
 # NotesApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.18.
+Простое SPA-приложение на Angular для знакомства с веб-разработкой.
 
-## Development server
+## Getting started
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1. Установить [Node.js](https://nodejs.org/en/);
+2. Установить [VS Code](https://code.visualstudio.com/);
+3. Установить [SourceTree](https://www.sourcetreeapp.com/)
+4. Клонировать репозиторий из Github на локальный диск с помощью SourceTree;
+5. Открыть репозиторий с помощью VS Code;
+6. В терминале выполнить npm install;
+7. В терминале выполнить npm start;
+8. В браузере открыть http://localhost:4200/ (локально запущенное приложение в режиме debug)
 
-## Code scaffolding
+## Советы по работе в VS Code;
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Используй ALT + arrow_right и ALT + arrow_left для навигации вперед и назад;
+- Используй F12 для перехода к имплементации;
+- Используй console.log() для вывода информации в консоль DevTools.
 
-## Build
+## Советы по работе с DevTools в браузере (F12)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- Используй вкладку Console для просмотра выводимой информации в виде логов и ошибок;
+- Используй вкладку Elements для просмотра и live-редактирования DOM (веб-страницы).
