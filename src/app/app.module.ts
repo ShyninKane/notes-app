@@ -5,16 +5,12 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
-import {
-  MatInputModule,
-  MatButtonModule,
-  MatSelectModule,
-  MatIconModule,
-} from "@angular/material";
+import { MatButtonModule } from "@angular/material";
 import { FormsModule } from "@angular/forms";
-import { MatListModule } from "@angular/material/list";
-import { MatGridListModule } from "@angular/material/grid-list";
-import { MatCardModule } from "@angular/material/card";
+
+// главный модуль приложения, где объявляются используемые им компоненты, другие модули и т.д.
+// крупные приложения следует дробить на множество модулей для улучшения времени загрузки
+// (например, выделить интерфейс администраторов приложения в отдельный модуль, чтобы не отправлять его код обычным пользователям, т.к. он им не доступен)
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,13 +19,7 @@ import { MatCardModule } from "@angular/material/card";
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    MatInputModule,
     MatButtonModule,
-    MatSelectModule,
-    MatIconModule,
-    MatListModule,
-    MatGridListModule,
-    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
